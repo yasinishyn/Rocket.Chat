@@ -39,7 +39,7 @@ function SideBar({
 			<Logo
 				src={logoSrc}
 				width='auto'
-				height='x24'
+				height='x48'
 				margin='x4'
 			/>
 			<Box

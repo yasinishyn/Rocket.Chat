@@ -1,0 +1,39 @@
+<template name="mainHeader">
+    <header class="main-header rc-header rc-header--room" >
+        <div class="rc-header__wrap">
+            <div class="rc-header__block rc-header__block--action rc-header__block__first">
+                <span class="">Lobby</span>
+            </div>
+            <div class="rc-header__block rc-header__block--action">
+                <span class="">Schedule</span>
+            </div>
+            <div class="rc-header__block rc-header__block--action">
+                <span class="">Auditorium</span>
+            </div>
+            <div class="rc-header__block rc-header__block--action">
+                <span class="">Expo Hall</span>
+            </div>
+
+			<div class="rc-header__content rc-header__block"></div>
+
+			<span class="rc-header__block">
+                <i class="icon-calendar"></i>
+            </span>
+
+            <span class="rc-header__block">
+                <i class="icon-bell"></i>
+            </span>
+
+            <span class="rc-header__block">
+                <i class="icon-mail"></i>
+            </span>
+
+			<div class="rc-header__block rc-header__block-action rc-header__encryption">
+				<div aria-haspopup="true" class="sidebar__header-thumb">
+                    {{> avatar username=username}}
+                    <div class="sidebar__header-status-bullet sidebar__header-status-bullet--{{status}}"></div>
+                </div>
+			</div>
+		</div>
+    </header>
+</template>

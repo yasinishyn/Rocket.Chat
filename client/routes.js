@@ -94,6 +94,14 @@ FlowRouter.route('/home', {
 	},
 });
 
+FlowRouter.route('/booth', {
+	name: 'booth',
+	action(params, queryParams) {
+		KonchatNotification.getDesktopPermission();
+		BlazeLayout.render('booth');
+	},
+});
+
 FlowRouter.route('/directory/:tab?', {
 	name: 'directory',
 	action: () => {

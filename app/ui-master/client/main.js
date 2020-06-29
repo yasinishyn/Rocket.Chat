@@ -6,6 +6,7 @@ import { Tracker } from 'meteor/tracker';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Session } from 'meteor/session';
 import { Template } from 'meteor/templating';
+import { ReactiveDict } from 'meteor/reactive-dict';
 
 import { t, getUserPreference } from '../../utils/client';
 import { chatMessages } from '../../ui';
@@ -147,11 +148,24 @@ Template.body.onRendered(function() {
 
 Template.main.onCreated(function() {
 	tooltip.init();
+
+	this.state = new ReactiveDict();
+
+	this.autorun(() => {
+		FlowRouter.watchPathChange();
+		this.state.set('currentPath', FlowRouter.current().route.path);
+	});
 });
 
 Template.main.helpers({
-	removeSidenav() {
-		return Layout.isEmbedded() && !/^\/admin/.test(FlowRouter.current().route.path);
+	currentPath: function () {
+    return Template.instance().state.get("currentPath");
+  },
+	removeSidenav(currentPath) {
+		return Layout.isEmbedded() && !/^\/admin/.test(currentPath);
+	},
+	removeStatistics(currentPath) {
+		return /^\/admin/.test(currentPath);
 	},
 	siteName() {
 		return settings.get('Site_Name');

@@ -33,13 +33,22 @@
 						{{else}}
 							{{> videoCall overlay=true}}
 							<div id="user-card-popover"></div>
+
+							{{> mainHeader}}
+
+							<!-- TODO: Move to seporate tempalte -->
 							<div id="rocket-chat" class="{{embeddedVersion}} menu-nav">
-								{{#unless removeSidenav}}
+								{{#unless removeSidenav currentPath}}
 									{{> sideNav }}
 								{{/unless}}
+
 								<div class="{{#unless $eq old false}}rc-old{{/unless}} main-content content-background-color {{readReceiptsEnabled}}">
 									{{> Template.dynamic template=center}}
 								</div>
+
+								{{#unless removeStatistics currentPath}}
+									{{> statistics }}
+								{{/unless}}
 							</div>
 
 							<div class="rc-old connection-status">

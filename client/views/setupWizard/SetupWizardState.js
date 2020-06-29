@@ -8,6 +8,8 @@ import SetupWizardPage from './SetupWizardPage';
 export const finalStep = 'final';
 
 const useStepRouting = () => {
+	console.log('useStepRouting')
+
 	const param = useRouteParameter('step');
 	const userId = useUserId();
 	const setupWizardRoute = useRoute('setup-wizard');
@@ -39,6 +41,9 @@ const useStepRouting = () => {
 };
 
 const useParameters = () => {
+
+	console.log('useParameters')
+
 	const [loaded, setLoaded] = useState(false);
 	const [settings, setSettings] = useState([]);
 	const [canDeclineServerRegistration, setCapableOfDeclineServerRegistration] = useState(false);
@@ -91,6 +96,9 @@ const SetupWizardContext = createContext({
 });
 
 function SetupWizardState() {
+
+	console.log('SetupWizardState')
+
 	const [currentStep, setCurrentStep] = useStepRouting();
 	const {
 		loaded,

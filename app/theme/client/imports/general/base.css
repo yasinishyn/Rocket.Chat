@@ -27,7 +27,7 @@ body {
 	height: 100%;
 	padding: 0;
 
-	background-color: var(--rc-color-primary);
+	background-color: var(--color-white);
 
 	font-family: var(--body-font-family);
 	font-size: var(--text-small-size);
