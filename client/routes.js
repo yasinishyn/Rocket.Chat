@@ -96,7 +96,7 @@ FlowRouter.route('/home', {
 
 FlowRouter.route('/booth', {
 	name: 'booth',
-	action(params, queryParams) {
+	action() {
 		KonchatNotification.getDesktopPermission();
 		BlazeLayout.render('booth');
 	},

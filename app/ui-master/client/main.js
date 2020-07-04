@@ -158,9 +158,9 @@ Template.main.onCreated(function() {
 });
 
 Template.main.helpers({
-	currentPath: function () {
-    return Template.instance().state.get("currentPath");
-  },
+	currentPath() {
+		return Template.instance().state.get('currentPath');
+	},
 	removeSidenav(currentPath) {
 		return Layout.isEmbedded() && !/^\/admin/.test(currentPath);
 	},

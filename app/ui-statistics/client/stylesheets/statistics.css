@@ -1,15 +1,21 @@
 .statistics {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 30%;
-  flex: 0 0 30%;
-  width: 30%;
-  max-width: 30%;
-  background-color: white;
-  margin-left: 24px;
+	-ms-flex: 0 0 30%;
+	flex: 0 0 30%;
 
-  .calendar, .statistics-now, .statistics-history {
-    height: 250px;
-    margin: 0 24px 24px 0;
-    background-color: #F3F3F3;
-  }
+	width: 30%;
+	max-width: 30%;
+	margin-left: 24px;
+
+	background-color: white;
+
+	-webkit-box-flex: 0;
+
+	.calendar,
+	.statistics-now,
+	.statistics-history {
+		height: 250px;
+		margin: 0 24px 24px 0;
+
+		background-color: var(--content-background-color);
+	}
 }
